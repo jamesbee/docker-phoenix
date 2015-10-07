@@ -22,7 +22,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y curl wget git mak
 RUN wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
  && dpkg -i erlang-solutions_1.0_all.deb \
  && apt-get update \
- && apt-get install -y erlang erlang-ssl erlang-inets && rm erlang-solutions_1.0_all.deb
+ && apt-get install -y erlang erlang-ssl erlang-inets && rm erlang-solutions_1.0_all.deb \
  && apt-get clean
 
 # install elixir from source

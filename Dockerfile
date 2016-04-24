@@ -32,7 +32,7 @@ RUN git clone https://github.com/phoenixframework/phoenix.git \
  && cd phoenix && git checkout v$PHOENIX_VERSION \
  && mix local.hex --force && mix local.rebar --force \
  && mix do deps.get, compile \
- && mix archive.install https://github.com/phoenixframework/phoenix/releases/download/v$PHOENIX_VERSION/phoenix_new-$PHOENIX_VERSION.ez --force
+ && mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
 
 # install Node.js and NPM in order to satisfy brunch.io dependencies
 # the snippet below is borrowed from the official nodejs Dockerfile

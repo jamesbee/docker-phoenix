@@ -29,7 +29,8 @@ RUN apt-get install -y elixir erlang-dev erlang-parsetools && rm erlang-solution
 ENV PHOENIX_VERSION 1.1.4
 
 # install the Phoenix Mix archive
-RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez
+RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez &&
+  mix local.hex --force && mix local.rebar --force
 
 # install Node.js (>= 5.0.0) and NPM in order to satisfy brunch.io dependencies
 # See http://www.phoenixframework.org/docs/installation#section-node-js-5-0-0-

@@ -22,12 +22,12 @@ RUN wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
  && apt-get clean
 
 # install elixir from source
-ENV ELIXIR_VERSION 1.1.1
+ENV ELIXIR_VERSION 1.2.4
 RUN git clone https://github.com/elixir-lang/elixir.git && cd elixir && git checkout v$ELIXIR_VERSION && make
 ENV PATH $PATH:/elixir/bin
 
 # install Phoenix from source with some previous requirements
-ENV PHOENIX_VERSION 1.1.0
+ENV PHOENIX_VERSION 1.1.4
 RUN git clone https://github.com/phoenixframework/phoenix.git \
  && cd phoenix && git checkout v$PHOENIX_VERSION \
  && mix local.hex --force && mix local.rebar --force \
@@ -52,7 +52,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 4.2.3
+ENV NODE_VERSION 4.4.3
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
   && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
